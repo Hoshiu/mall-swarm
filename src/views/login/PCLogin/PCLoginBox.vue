@@ -11,7 +11,7 @@
           商城！
         </div>
         <div class="my-6 mx-8">
-          <div class="flex px-2 text-base">
+          <div class="flex px-2 py-2 h-12 text-base">
             <button
               class="flex-auto text-center border-b-2 text-black border-gray-300 focus:outline-none"
               @click="handleChoiseLogin1"
@@ -28,7 +28,7 @@
             </button>
           </div>
           <div v-show="showLogin">
-            <div class="my-6 border-b-2 border-red-400">
+            <div class="mt-5 my-6 border-b-2 border-red-400">
               <i style="font-size:1.2rem" class="iconfont pl-1">&#xe626;</i>
               <input
                 placeholder="请输入手机号"
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div v-show="!showLogin">
-            <div class="my-6 border-b-2 border-red-400">
+            <div class="mt-5 my-6 border-b-2 border-red-400">
               <i style="font-size:1.2rem" class="iconfont pl-1">&#xe626;</i>
               <input
                 placeholder="请输入手机号"
@@ -69,8 +69,8 @@
                 class="pl-1 mr-2 w-36 bg-gray-200 bg-opacity-0 focus:outline-none"
               />
               <button
-                style="font-size:0.8rem"
-                class="w-20 pt-2 pb-1 bg-red-500 text-white focus:outline-none"
+                style="font-size: 0.8rem"
+                class="w-20 pt-2 pb-1 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
               >
                 获取验证码
               </button>
@@ -135,7 +135,7 @@ export default defineComponent({
         ElMessage.error('密码错误，请校验后重新输入！')
       } else {
         ElMessage.success('登录成功！')
-        localStorage.isLogin = true
+        sessionStorage.isLogin = true
         router.push({ name: 'PCHome' })
       }
     }
@@ -152,6 +152,7 @@ export default defineComponent({
   color: rgb(239, 68, 68);
 }
 .active {
+  font-weight: 600;
   --tw-border-opacity: 1;
   border-color: rgba(248, 113, 113, var(--tw-border-opacity));
 }

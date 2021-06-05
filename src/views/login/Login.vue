@@ -67,9 +67,7 @@
   <Toast v-if="data.showToast" v-model:remove="data.showToast" :message="data.toastMessage"/>
 </template>
 
-<script
-
->
+<script>
 import { useRouter } from 'vue-router'
 import { post } from '../../utils/request'
 import { defineComponent, reactive } from 'vue'
@@ -103,6 +101,11 @@ export default defineComponent({
       // console.log(message)
     }
     const handleLogin = async () => {
+      // 测试用
+      if (data.username === '123456' && data.password === '123456') {
+        sessionStorage.isLogin = true
+        router.push({ name: 'MobHome' })
+      }
       try {
         data.isclick = true
         data.submitinfo = 'Loading...'
