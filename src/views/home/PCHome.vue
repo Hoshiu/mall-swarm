@@ -1,6 +1,5 @@
 <template>
-  <div>This is PC's Home</div>
-  <Docker></Docker>
+  <div>This is PC's Home1234</div>
 </template>
 
 <script lang="ts">

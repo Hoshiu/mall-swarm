@@ -18,7 +18,6 @@ export default defineComponent({
     PCLoginTop,
     PCLoginBox,
     PCLoginFoot
-
   }
 })
 </script>

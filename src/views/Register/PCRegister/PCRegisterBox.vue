@@ -8,12 +8,12 @@
         <div class="py-4 px-10 relative w-full text-2xl border-b-2 border-gray-200 text-center">
           注册账号
         </div>
-        <div class="my-6 mx-8">
+        <div class="my-10 mx-8">
           <div class="my-6 border-b-2 border-red-400">
             <i style="font-size:1.2rem" class="iconfont pl-1">&#xe626;</i>
             <input
               placeholder="请输入手机号"
-              class="pl-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
+              class="pl-1 pb-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
             />
           </div>
           <div class="my-6 border-b-2 border-red-400">
@@ -21,7 +21,7 @@
             <input
               placeholder="请输入密码"
               type="password"
-              class="pl-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
+              class="pl-1 pb-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
             />
           </div>
           <div class="my-6 border-b-2 border-red-400">
@@ -32,7 +32,7 @@
             />
             <button
               style="font-size:0.8rem"
-              class="w-20 pt-2 pb-1 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
+              class="w-20 pt-2 pb-1.5 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
             >
               获取验证码
             </button>

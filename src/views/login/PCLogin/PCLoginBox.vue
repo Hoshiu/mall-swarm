@@ -5,12 +5,12 @@
   >
     <div style="width:1220px" class="overflow-hidden mx-auto">
       <div class="relative my-10 px-8 py-4 w-96 h-96 rounded-lg float-right bg-gray-200 bg-opacity-75 overflow-hidden">
-        <div class="py-4 px-10 relative w-full text-xl border-b-2 border-gray-200 text-center">
+        <div class="py-5 px-10 relative w-full text-xl border-b-2 border-gray-200 text-center">
           Hi，欢迎来到
           <span class="text-red-400">ABC</span>
           商城！
         </div>
-        <div class="my-6 mx-8">
+        <div class="mt-5 my-6 mx-8">
           <div class="flex px-2 py-2 h-12 text-base">
             <button
               class="flex-auto text-center border-b-2 text-black border-gray-300 focus:outline-none"
@@ -32,7 +32,7 @@
               <i style="font-size:1.2rem" class="iconfont pl-1">&#xe626;</i>
               <input
                 placeholder="请输入手机号"
-                class="pl-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
+                class="pl-1 pb-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
                 v-model="username"
               />
             </div>
@@ -59,7 +59,7 @@
               <i style="font-size:1.2rem" class="iconfont pl-1">&#xe626;</i>
               <input
                 placeholder="请输入手机号"
-                class="pl-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
+                class="pl-1 pb-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
               />
             </div>
             <div class="my-6 border-b-2 border-red-400">
@@ -70,7 +70,7 @@
               />
               <button
                 style="font-size: 0.8rem"
-                class="w-20 pt-2 pb-1 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
+                class="w-20 pt-2 pb-1.5 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
               >
                 获取验证码
               </button>
@@ -140,6 +140,7 @@ export default defineComponent({
       }
     }
     const handleToPCRegister = () => {
+      console.log('123')
       router.push({ name: 'PCRegister' })
     }
     return { handlePCLogin, handleToPCRegister }

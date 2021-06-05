@@ -8,15 +8,18 @@ import MobHome from '../views/home/MobHome.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/Home',
+    path: '/PCHome',
     name: 'PCHome',
     component: PCHome
   },
-  // 手机端的路由
   {
-    path: '/home',
+    path: '/MobHome',
     name: 'MobHome',
-    component: MobHome
+    component: MobHome,
+    beforeEnter (_to, _from, next) {
+      const { isLogin } = sessionStorage
+      isLogin ? next() : next({ path: '/login' })
+    }
   },
   {
     path: '/register',
@@ -40,7 +43,7 @@ const routes: Array<RouteRecordRaw> = [
     component: PCLogin,
     beforeEnter (_to, _from, next) {
       const { isLogin } = sessionStorage
-      isLogin ? next({ name: 'MobHome' }) : next()
+      isLogin ? next({ name: 'PCHome' }) : next()
     }
   }
 ]
