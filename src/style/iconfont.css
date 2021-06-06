@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'iconfont';  /* Project id 2585811 */
-  src: url('//at.alicdn.com/t/font_2585811_rxgdb6gp4kc.woff2?t=1622821721081') format('woff2'),
-      url('//at.alicdn.com/t/font_2585811_rxgdb6gp4kc.woff?t=1622821721081') format('woff'),
-      url('//at.alicdn.com/t/font_2585811_rxgdb6gp4kc.ttf?t=1622821721081') format('truetype');
+  src: url('//at.alicdn.com/t/font_2585811_5js10db2hzu.woff2?t=1622950188197') format('woff2'),
+    url('//at.alicdn.com/t/font_2585811_5js10db2hzu.woff?t=1622950188197') format('woff'),
+    url('//at.alicdn.com/t/font_2585811_5js10db2hzu.ttf?t=1622950188197') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -14,4 +14,8 @@
 
 .icon-password:before {
   content: "\e734";
+}
+
+.icon-zuo:before {
+  content: "\e67a";
 }
