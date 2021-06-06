@@ -1,7 +1,7 @@
 <template>
   <div
     style="background-image: url(//img02.hua.com/pc/assets/img/login_bg.jpg)"
-    class="login-bg bg-cover bg-center bg-no-repeat"
+    class="bg-cover bg-center bg-no-repeat"
   >
     <div style="width:1220px" class="overflow-hidden mx-auto">
       <div class="relative my-10 px-8 py-4 w-96 h-96 rounded-lg float-right bg-gray-200 bg-opacity-75 overflow-hidden">
@@ -62,15 +62,17 @@
                 class="pl-1 pb-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
               />
             </div>
-            <div class="my-6 border-b-2 border-red-400">
-              <i style="font-size:1.2rem" class="iconfont pl-1">&#xe62b;</i>
-              <input
-                placeholder="请输入验证码"
-                class="pl-1 mr-2 w-36 bg-gray-200 bg-opacity-0 focus:outline-none"
-              />
+            <div class="my-6">
+              <div class="inline-block w-40 border-b-2 border-red-400">
+                <i style="font-size:1.2rem" class="iconfont pl-1">&#xe62b;</i>
+                <input
+                  placeholder="请输入验证码"
+                  class="pl-1 pb-1 mr-2 w-32 bg-gray-200 bg-opacity-0 focus:outline-none"
+                />
+              </div>
               <button
                 style="font-size: 0.8rem"
-                class="w-20 pt-2 pb-1.5 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
+                class="w-20 pt-2 pb-1.5 ml-2 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
               >
                 获取验证码
               </button>

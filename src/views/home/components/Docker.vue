@@ -1,5 +1,5 @@
 <template>
-  <div class="flex box-border absolute w-full bottom-0 left-0 border-t-2 border-gray-300">
+  <div class="flex box-border fixed w-full bottom-0 left-0 border-t-2 border-gray-300">
     <div
       v-for="(item, index) in dockerList"
       class="text-center flex-1"

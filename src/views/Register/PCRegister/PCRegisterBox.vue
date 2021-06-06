@@ -24,19 +24,21 @@
               class="pl-1 pb-1 w-56 bg-gray-200 bg-opacity-0 focus:outline-none"
             />
           </div>
-          <div class="my-6 border-b-2 border-red-400">
-            <i style="font-size:1.2rem" class="iconfont pl-1">&#xe62b;</i>
-            <input
-              placeholder="请输入验证码"
-              class="pl-1 mr-2 w-36 bg-gray-200 bg-opacity-0 focus:outline-none"
-            />
-            <button
-              style="font-size:0.8rem"
-              class="w-20 pt-2 pb-1.5 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
-            >
-              获取验证码
-            </button>
-          </div>
+          <div class="my-6">
+              <div class="inline-block w-40 border-b-2 border-red-400">
+                <i style="font-size:1.2rem" class="iconfont pl-1">&#xe62b;</i>
+                <input
+                  placeholder="请输入验证码"
+                  class="pl-1 pb-1 mr-2 w-32 bg-gray-200 bg-opacity-0 focus:outline-none"
+                />
+              </div>
+              <button
+                style="font-size: 0.8rem"
+                class="w-20 pt-2 pb-1.5 ml-2 bg-red-500 text-white rounded hover:bg-red-400 focus:outline-none"
+              >
+                获取验证码
+              </button>
+            </div>
           <div class="text-center">
             <button
               class="w-full h-8 mb-3 bg-red-500 rounded-xl text-white hover:bg-red-400 focus:outline-none"

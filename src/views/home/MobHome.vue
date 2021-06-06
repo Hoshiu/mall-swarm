@@ -1,20 +1,20 @@
 <template>
-  <FirstPage v-if="componentID ===  0"></FirstPage>
-  <SortPage v-if="componentID ===  1"></SortPage>
-  <SharePage v-if="componentID ===  2"></SharePage>
-  <ShopCart v-if="componentID ===  3"></ShopCart>
-  <MyPage v-if="componentID ===  4"></MyPage>
+  <FirstPage v-show="componentID === 0"></FirstPage>
+  <SortPage v-show="componentID === 1"></SortPage>
+  <SharePage v-show="componentID === 2"></SharePage>
+  <ShopCart v-show="componentID === 3"></ShopCart>
+  <MyPage v-show="componentID === 4"></MyPage>
   <Docker @index="handleChangeIndex"></Docker>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Docker from './components/Docker.vue'
-import FirstPage from './components/homepages/FirstPage.vue'
-import SortPage from './components/homepages/SortPage.vue'
-import SharePage from './components/homepages/SharePage.vue'
-import ShopCart from './components/homepages/ShopCart.vue'
-import MyPage from './components/homepages/MyPage.vue'
+import FirstPage from '../../components/homepages/FirstPage.vue'
+import SortPage from '../../components/homepages/SortPage.vue'
+import SharePage from '../../components/homepages/SharePage.vue'
+import ShopCart from '../../components/homepages/ShopCart.vue'
+import MyPage from '../../components/homepages/MyPage.vue'
 
 export default defineComponent({
   name: 'MobHome',
