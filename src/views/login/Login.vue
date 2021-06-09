@@ -104,7 +104,7 @@ export default defineComponent({
       // 测试用
       if (data.username === '123456' && data.password === '123456') {
         sessionStorage.isLogin = true
-        router.push({ name: 'MobHome' })
+        router.push({ name: 'FirstPage' })
       }
       try {
         data.isclick = true
@@ -115,7 +115,7 @@ export default defineComponent({
         })
         if (result.data.data === true) {
           sessionStorage.isLogin = true
-          router.push({ name: 'MobHome' })
+          router.push({ name: 'FirstPage' })
         } else {
           showToast('登录失败', '密码错误，请校验后重新输入!')
         }

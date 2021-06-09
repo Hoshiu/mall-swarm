@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed flex h-11 w-full bg-pink-300 justify-center items-center text-base text-white z-20"
+    class="fixed flex h-12 w-full back justify-center items-center text-base text-white z-20"
     :style="data.opacityStyle"
   >
     我的ID
@@ -26,36 +26,36 @@
         >
       </div>
       <div class="inline-block float-left pt-9">
-        <span class="text-xl text-black">我的ID</span>
+        <span class="text-xl font-bold text-pink-400">我的ID</span>
       </div>
-      <div style="padding-top:5.2rem" class="text-black">
+      <div style="padding-top:5.2rem" class="text-purple-600">
         <i class="iconfont">&#xe62c;</i>
         <span class="pl-1 text-sm">写点儿什么...</span>
       </div>
     </div>
   </div>
 
-  <div class="absolute inset-x-0 top-28 w-full h-44 px-5 py-1.5 z-10">
-    <div class="rounded-2xl bg-white h-40 p-2.5">
-      <ul class="pb-2 border-b-2 border-gray-200">
-        <li class="inline-block border-r-2 border-gray-200 w-1/3">
+  <div class="absolute inset-x-0 top-28 w-full h-44 px-5 py-1.5 mb-2 z-10">
+    <div class="rounded-2xl bg-white h-40 p-2.5 bg-blue-100">
+      <ul class="pb-2 border-b-2 border-gray-300">
+        <li class="inline-block border-r-2 border-gray-300 w-1/3">
           <div class="inline-block w-2/3 text-center pl-2">
             <span class="block text-sm pb-1">收藏夹</span>
-            <span class="block text-xs">123</span>
+            <span class="block text-xs">99+</span>
           </div>
           <i style="font-size: 1.5rem" class="inline-block iconfont float-right py-1 w-1/3">&#xe629;</i>
         </li>
-        <li class="inline-block border-r-2 border-gray-200 w-1/3">
+        <li class="inline-block border-r-2 border-gray-300 w-1/3">
           <div class="inline-block w-2/3 text-center pl-2">
             <span class="block text-sm pb-1">关注</span>
-            <span class="block text-xs">123</span>
+            <span class="block text-xs">99+</span>
           </div>
           <i style="font-size: 1.5rem" class="inline-block iconfont float-right py-1 w-1/3">&#xe662;</i>
         </li>
         <li class="inline-block w-1/3">
           <div class="inline-block w-2/3 text-center pl-2">
             <span class="block text-sm pb-1">足迹</span>
-            <span class="block text-xs">123</span>
+            <span class="block text-xs">99+</span>
           </div>
           <i style="font-size: 1.5rem" class="inline-block iconfont float-right py-1 w-1/3">&#xe600;</i>
         </li>
@@ -69,25 +69,13 @@
         </span>
       </div>
       <ul class="py-1.5">
-        <li class="inline-block text-center w-1/5">
-          <i style="font-size: 1.5rem" class="iconfont block pb-1">&#xe603;</i>
-          <span class="block text-xs">待付款</span>
-        </li>
-        <li class="inline-block text-center w-1/5">
-          <i style="font-size: 1.5rem" class="iconfont block pb-1">&#xe642;</i>
-          <span class="block text-xs">待发货</span>
-        </li>
-        <li class="inline-block text-center w-1/5">
-          <i style="font-size: 1.5rem" class="iconfont block pb-1">&#xe62f;</i>
-          <span class="block text-xs">待收货</span>
-        </li>
-        <li class="inline-block text-center w-1/5">
-          <i style="font-size: 1.5rem" class="iconfont block pb-1">&#xe772;</i>
-          <span class="block text-xs">待评价</span>
-        </li>
-        <li class="inline-block text-center w-1/5">
-          <i style="font-size: 1.5rem" class="iconfont block pb-1">&#xe623;</i>
-          <span class="block text-xs">售后</span>
+        <li
+          class="inline-block text-center w-1/5"
+          v-for="(item) in orderToolbar"
+          :key=item.text
+        >
+          <i style="font-size: 1.5rem" class="iconfont block pb-1" v-html="item.icon" />
+          <span class="block text-xs">{{item.text}}</span>
         </li>
       </ul>
     </div>
@@ -105,6 +93,13 @@ export default defineComponent({
         opacity: 0
       }
     })
+    const orderToolbar = [
+      { text: '待付款', icon: '&#xe603;' },
+      { text: '待发货', icon: '&#xe642;' },
+      { text: '待收货', icon: '&#xe62f;' },
+      { text: '待评价', icon: '&#xe772;' },
+      { text: '售后', icon: '&#xe623;' }
+    ]
     const handleScroll = () => {
       const scorll = document.documentElement.scrollTop ||
         document.body.scrollTop ||
@@ -123,7 +118,7 @@ export default defineComponent({
     onUnmounted(() => {
       window.removeEventListener('scroll', handleScroll)
     })
-    return { data, handleScroll }
+    return { data, orderToolbar, handleScroll }
   }
 })
 </script>

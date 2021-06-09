@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 1536px" class="w-screen">
+  <div class="w-screen">
     <PCLoginTop></PCLoginTop>
     <PCLoginBox></PCLoginBox>
     <PCLoginFoot></PCLoginFoot>
@@ -8,9 +8,9 @@
 
 <script>
 import { defineComponent } from 'vue'
-import PCLoginTop from './PCLogin/PCLoginTop.vue'
-import PCLoginBox from './PCLogin/PCLoginBox.vue'
-import PCLoginFoot from './PCLogin/PCLoginFoot.vue'
+import PCLoginTop from '../../components/PCLogin/PCLoginTop.vue'
+import PCLoginBox from '../../components/PCLogin/PCLoginBox.vue'
+import PCLoginFoot from '../../components/PCLogin/PCLoginFoot.vue'
 
 export default defineComponent({
   name: 'PCLogin',

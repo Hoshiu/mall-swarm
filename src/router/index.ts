@@ -4,22 +4,17 @@ import PCLogin from '../views/login/PCLogin.vue'
 import Register from '../views/Register/Register.vue'
 import PCRegister from '../views/Register/PCRegister.vue'
 import PCHome from '../views/home/PCHome.vue'
-import MobHome from '../views/home/MobHome.vue'
+import FirstPage from '../components/homepages/FirstPage.vue'
+import SortPage from '../components/homepages/SortPage.vue'
+import SharePage from '../components/homepages/SharePage.vue'
+import ShopCart from '../components/homepages/ShopCart.vue'
+import MyPage from '../components/homepages/MyPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/PCHome',
     name: 'PCHome',
     component: PCHome
-  },
-  {
-    path: '/MobHome',
-    name: 'MobHome',
-    component: MobHome,
-    beforeEnter (_to, _from, next) {
-      const { isLogin } = sessionStorage
-      isLogin ? next() : next({ path: '/login' })
-    }
   },
   {
     path: '/register',
@@ -35,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Login,
     beforeEnter (_to, _from, next) {
       const { isLogin } = sessionStorage
-      isLogin ? next({ name: 'MobHome' }) : next()
+      isLogin ? next({ name: 'FirstPage' }) : next()
     }
   }, {
     path: '/PCLogin',
@@ -45,6 +40,26 @@ const routes: Array<RouteRecordRaw> = [
       const { isLogin } = sessionStorage
       isLogin ? next({ name: 'PCHome' }) : next()
     }
+  }, {
+    path: '/FirstPage',
+    name: 'FirstPage',
+    component: FirstPage
+  }, {
+    path: '/SortPage',
+    name: 'SortPage',
+    component: SortPage
+  }, {
+    path: '/SharePage',
+    name: 'SharePage',
+    component: SharePage
+  }, {
+    path: '/ShopCart',
+    name: 'ShopCart',
+    component: ShopCart
+  }, {
+    path: '/MyPage',
+    name: 'MyPage',
+    component: MyPage
   }
 ]
 

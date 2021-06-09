@@ -34,7 +34,7 @@
               </a>
             </div>
             <div class="absolute top-9 h-48 w-72 bg-white z-10" v-show="showWe">
-              <img src="../../../../public/erweima.png" class="pt-4 px-20">
+              <img src="../../../public/erweima.png" class="pt-4 px-20">
               <p class="px-16 text-center text-black text-base">关注我们获取更多精彩</p>
             </div>
           </div>
