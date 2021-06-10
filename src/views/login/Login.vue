@@ -71,7 +71,7 @@
 import { useRouter } from 'vue-router'
 import { post } from '../../utils/request'
 import { defineComponent, reactive } from 'vue'
-import Toast from '../../components/Toast.vue'
+import Toast from '../../components/MobLoginToast/Toast.vue'
 
 export default defineComponent({
   name: 'Login',

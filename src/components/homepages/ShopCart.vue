@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-50">
-    <Header></Header>
-    <Wares></Wares>
+    <Header v-if="refresh"></Header>
+    <Wares @click="handleClick"></Wares>
   </div>
   <Docker></Docker>
 </template>
@@ -18,6 +18,19 @@ export default defineComponent({
     Header,
     Wares,
     Docker
+  },
+  data () {
+    return {
+      refresh: true
+    }
+  },
+  methods: {
+    handleClick () {
+      this.refresh = false
+      this.$nextTick(() => {
+        this.refresh = true
+      }, 0)
+    }
   }
 })
 </script>

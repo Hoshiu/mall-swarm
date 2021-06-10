@@ -38,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
     component: PCLogin,
     beforeEnter (_to, _from, next) {
       const { isLogin } = sessionStorage
-      isLogin ? next({ name: 'PCHome' }) : next()
+      isLogin ? window.location.href = 'https://www.jd.com/?cu=true&utm_source=haosou-search&utm_medium=cpc&utm_campaign=t_262767352_haosousearch&utm_term=10606713393_0_96107c3f6fa54df59edd3487da601133' : next()
     }
   }, {
     path: '/FirstPage',
