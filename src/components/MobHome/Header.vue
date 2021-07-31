@@ -1,18 +1,18 @@
 <template>
   <div class="fixed w-screen z-50 top-0 left-0 bg-gradient-to-r from-blue-300 via-pink-200 to-purple-200">
-    <!-- <location /> -->
+    <location />
     <div class="search">
       <el-autocomplete
         class="inline-input"
         v-model="state1"
         :fetch-suggestions="querySearch"
-        placeholder="请输入内容"
+        placeholder="IQOO Neo5"
     >
         <template #prefix>
           <i class='iconfont onlyRight pl-10 text-gray-600'>&#xe615;</i>
         </template>
         <template #suffix>
-          <button class='buttonToSearch bg-gradient-to-r from-pink-700 to-red-500 absolute'>搜索</button>
+          <button @click="sure_search()" class='buttonToSearch bg-gradient-to-r from-pink-700 to-red-500 absolute'>搜索</button>
         </template>
       </el-autocomplete>
       <div class="relative followMe" @click="changeId">
@@ -25,16 +25,32 @@
 </template>
 
 <script>
-// import Location from './Location.vue'
+import Location from './Location.vue'
 import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
   name: 'Header',
-  // components: {
-  //   Location
-  // },
+  components: {
+    Location
+  },
+  data () {
+    return {
+      myData: [],
+      search1: '',
+      now: -1
+    }
+  },
   methods: {
+    // 点击搜索按钮，跳转至搜索结果页
+    sure_search: function () {
+      this.search1 = this.state1
+      if (this.search1) {
+        window.location.href = 'https://uland.taobao.com/semm/tbsearch?#q=' + this.search1
+      } else {
+        window.location.href = 'https://uland.taobao.com/semm/tbsearch?#q=IQOO Neo5'
+      }
+    },
     changeId () {
-      this.$emit('changeId', 1)
+      this.$router.push({ name: 'SortPage' })
     }
   },
   setup () {
@@ -49,8 +65,7 @@ export default defineComponent({
     const createFilter = (queryString) => {
       return (restaurant) => {
         return (
-          restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) ===
-          0
+          restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
         )
       }
     }
@@ -240,4 +255,5 @@ export default defineComponent({
 :deep(.el-input__inner:focus) {
   border-color:rgb(220,38,38);
 }
+
 </style>

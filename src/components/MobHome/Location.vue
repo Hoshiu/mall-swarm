@@ -45,7 +45,6 @@ export default defineComponent({
         AMap.event.addListener(geolocation, 'error', onError)
 
         function onComplete (location) {
-          // console.log(location.formattedAddress)
           document.getElementById('location').innerText = location.formattedAddress
         }
 

@@ -5,7 +5,7 @@
     <Order2></Order2>
     <Wares></Wares>
   </div>
-  <Docker></Docker>
+  <Docker :index="index"></Docker>
 </template>
 
 <script>
@@ -24,6 +24,11 @@ export default defineComponent({
     Order2,
     Wares,
     Docker
+  },
+  data () {
+    return {
+      index: 4
+    }
   }
 })
 </script>

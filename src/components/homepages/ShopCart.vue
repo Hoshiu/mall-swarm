@@ -3,7 +3,7 @@
     <Header v-if="refresh"></Header>
     <Wares @click="handleClick"></Wares>
   </div>
-  <Docker></Docker>
+  <Docker :index="index"></Docker>
 </template>
 
 <script>
@@ -21,7 +21,8 @@ export default defineComponent({
   },
   data () {
     return {
-      refresh: true
+      refresh: true,
+      index: 3
     }
   },
   methods: {

@@ -8,8 +8,8 @@
       <div
         style="font-size: 1.2rem"
         class="iconfont pt-1.5 h-8"
-        :class="{active: data.isActive}"
         v-html="item.icon"
+        :class="{active: index === isActive}"
         @click="handleItemClick(index)"
       />
       <div style="font-size: 0.65rem" class="py-0.5">{{item.text}}</div>
@@ -18,16 +18,27 @@
 </template>
 
 <script>
-import { defineComponent, reactive } from 'vue'
+import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
 
 export default defineComponent({
   name: 'Docker',
+  data () {
+    return {
+      isActive: -1
+    }
+  },
+  props: {
+    index: Number
+  },
+  mounted () {
+    this.isActive = this.index
+  },
   setup () {
     const router = useRouter()
-    const data = reactive({
-      isActive: false
-    })
+    // const data = ({
+    //   isActive: 0
+    // })
     const handleItemClick = (index) => {
       switch (index) {
         case 0: {
@@ -59,7 +70,7 @@ export default defineComponent({
       { icon: '&#xe607;', text: '购物车' },
       { icon: '&#xe7ab;', text: '我的' }
     ]
-    return { data, dockerList, handleItemClick }
+    return { dockerList, handleItemClick }
   }
 })
 </script>

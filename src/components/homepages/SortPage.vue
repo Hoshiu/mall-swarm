@@ -4,7 +4,7 @@
     <ScrollLeft @index="handlePageIndex"></ScrollLeft>
     <ScrollRight1 :pageIndex="data.pageIndex"></ScrollRight1>
   </div>
-  <Docker></Docker>
+  <Docker :index="index"></Docker>
 </template>
 
 <script>
@@ -21,6 +21,11 @@ export default defineComponent({
     ScrollLeft,
     ScrollRight1,
     Docker
+  },
+  data () {
+    return {
+      index: 1
+    }
   },
   setup () {
     const data = reactive({

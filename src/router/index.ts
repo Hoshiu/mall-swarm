@@ -9,6 +9,7 @@ import SortPage from '../components/homepages/SortPage.vue'
 import SharePage from '../components/homepages/SharePage.vue'
 import ShopCart from '../components/homepages/ShopCart.vue'
 import MyPage from '../components/homepages/MyPage.vue'
+import Settlement from '../components/MobShopCart/Settlement.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -60,6 +61,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/MyPage',
     name: 'MyPage',
     component: MyPage
+  }, {
+    path: '/ShopCart/Settlement',
+    name: 'Settlement',
+    component: Settlement
   }
 ]
 

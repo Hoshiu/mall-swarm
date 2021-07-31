@@ -4,7 +4,7 @@
     <SwiperTop></SwiperTop>
     <ShareBody></ShareBody>
   </div>
-  <Docker></Docker>
+  <Docker :index="index"></Docker>
 </template>
 
 <script>
@@ -21,6 +21,11 @@ export default defineComponent({
     SwiperTop,
     ShareBody,
     Docker
+  },
+  data () {
+    return {
+      index: 2
+    }
   }
 })
 </script>

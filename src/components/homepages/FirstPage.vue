@@ -3,7 +3,7 @@
     <Header @changeId="setId"/>
     <ContentPart />
   </div>
-  <Docker />
+  <Docker :index="index"></Docker>
 </template>
 
 <script>
@@ -21,7 +21,8 @@ export default defineComponent({
   },
   data () {
     return {
-      id: 0
+      id: 0,
+      index: 0
     }
   },
   methods: {

@@ -45,7 +45,12 @@
       <!-- <input type="checkbox" class="check"> -->
     </div>
     <div class="inline-block w-4/5 pr-3 py-1.5 flex flex-row-reverse">
-      <button class="w-24 h-10 rounded-full bg-red-500 text-white focus:outline-none">结算</button>
+      <button
+        class="w-24 h-10 rounded-full bg-red-500 text-white focus:outline-none"
+        @touchend="handleSettlement"
+      >
+        结算
+      </button>
       <span class="inline-block h-10 text-center leading-10">
         合计:
       <span class="text-xs text-red-400 mr-2">￥{{countSum}}</span>
@@ -56,13 +61,15 @@
 
 <script>
 import { defineComponent, reactive, onMounted, onUnmounted } from 'vue'
+
 export default defineComponent({
   name: 'Header',
   data () {
     return {
       noItem: 0,
       list: [],
-      countSum: 0
+      countSum: 0,
+      checkList: []
     }
   },
   mounted () {
@@ -85,8 +92,25 @@ export default defineComponent({
       const sum = item.count * item.num
       if (!e.target.checked === true) {
         this.countSum += sum
+        this.countSum = parseFloat(this.countSum.toFixed(2))
+        this.checkList.push(item)
       } else {
         this.countSum -= sum
+        this.countSum = parseFloat(this.countSum.toFixed(2))
+        for (let i = 0; i < this.checkList.length; i++) {
+          if (this.checkList[i].id === item.id) {
+            this.checkList.splice(i, 1)
+          }
+        }
+      }
+    },
+    handleSettlement () {
+      for (let i = 0; i < this.checkList.length; i++) {
+        if (this.checkList.length !== 0) {
+          // 此处做路由跳转，以及传值
+          this.$router.push({ name: 'Settlement' })
+          this.$store.commit('Settlement', [this.checkList, this.countSum])
+        }
       }
     }
   },
@@ -106,9 +130,6 @@ export default defineComponent({
         data.opacityStyle.opacity = 0
       }
     }
-    // const reduceCount = () => {
-
-    // }
     onMounted(() => {
       window.addEventListener('scroll', handleScroll)
     })

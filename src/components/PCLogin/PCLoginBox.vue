@@ -142,7 +142,6 @@ export default defineComponent({
       }
     }
     const handleToPCRegister = () => {
-      console.log('123')
       router.push({ name: 'PCRegister' })
     }
     return { handlePCLogin, handleToPCRegister }

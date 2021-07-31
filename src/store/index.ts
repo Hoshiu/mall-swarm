@@ -3,7 +3,9 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     Items: [],
-    map: new Map()
+    map: new Map(),
+    checkList: [],
+    countSum: 0
   },
   mutations: {
     addItemToCart (state, item) {
@@ -25,6 +27,10 @@ export default createStore({
           item.num--
         }
       }
+    },
+    Settlement (state, data) {
+      state.checkList.push(data[0] as never)
+      state.countSum = data[1]
     }
   },
   actions: {
